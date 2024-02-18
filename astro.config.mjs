@@ -1,9 +1,9 @@
 import { defineConfig } from "astro/config";
 
-import preact from "@astrojs/preact";
+import react from "@astrojs/react";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://test.com",
-  integrations: [preact()]
+  site: "https://astro-tutorial-red.vercel.app/",
+  integrations: [react()],
 });
