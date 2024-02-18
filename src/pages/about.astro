@@ -1,0 +1,53 @@
+---
+import DefaultLayout from "../layouts/BaseLayout.astro";
+
+const pageTitle = "关于我";
+
+const identity = {
+  name: "mouse",
+  location: "中国北京",
+  bio: "我喜欢学习新技术。",
+  email: "mousexiaoqi111@gmail.com",
+};
+
+const skills = ["HTML", "CSS", "JavaScript", "TypeScript", "Vue", "Astro"];
+
+const skillColor = "navy";
+const fontWeight = "bold";
+const textCase = "uppercase";
+---
+
+<DefaultLayout title={pageTitle}>
+  <h1>关于我</h1>
+  <h2>……和我的新 Astro 网站！</h2>
+
+  <p>
+    我正在学习 Astro
+    的入门教程。这是我网站上的第二个页面，也是我自己建立的第一页面！
+  </p>
+
+  <p>随着我完成更多教程，该站点将更新，所以请继续查看我的旅程将如何进行吧！</p>
+
+  <p>关于我的一些信息：</p>
+  <ul>
+    <li>我的名字：{identity.name}</li>
+    <li>我住在{identity.location}</li>
+  </ul>
+  <p>我的技术：</p>
+  <ul>
+    {skills.map((skill) => <li class="skill">{skill}</li>)}
+  </ul>
+</DefaultLayout>
+
+<style define:vars={{ skillColor, fontWeight, textCase }}>
+  h1 {
+    color: purple;
+    font-size: 4rem;
+  }
+
+  .skill {
+    color: var(--skillColor);
+    font-weight: var(--fontWeight);
+    text-transform: var(--textCase);
+  }
+</style>

@@ -1,15 +1,10 @@
 ---
+import DefaultLayout from "../layouts/BaseLayout.astro";
+import Greeting from "../components/Greeting";
 ---
 
-<html lang="zh-cn">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type ="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content = {Astro.generator} >
-    <title>Astro站点</title>
-  </head>
-  <body>
-    <h1>你好！Astro，这是我的第一个astro站点！</h1>
-  </body>
-</html>
+<DefaultLayout title="主页">
+  <h1>欢迎来到我的astro博客</h1>
+
+  <Greeting client:load messages={["陌生人你好", "你好", "欢迎"]} />
+</DefaultLayout>
